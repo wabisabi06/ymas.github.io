@@ -1,0 +1,293 @@
+/* ---------- Colors ---------- */
+:root {
+  --green-light: #d6f0b2;
+  --green-mid: #a9c996;
+  --green-dark: #7a936a;
+  --green-deep: #4f6b3f;
+  --text: #111;
+  --white: #fff;
+}
+
+/* ---------- Reset ---------- */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', Arial, sans-serif;
+  color: var(--text);
+  background: var(--white);
+  line-height: 1.5;
+}
+
+a { color: inherit; }
+
+:focus-visible {
+  outline: 3px solid #1d3b0f;
+  outline-offset: 2px;
+}
+
+/* ---------- Header ---------- */
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 20px 32px;
+  background: linear-gradient(90deg, #c5ecaa 0%, #a7c590 55%, #78936a 100%);
+}
+
+.logo {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.nav a {
+  background: var(--white);
+  border: 1px solid #333;
+  padding: 4px 22px;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.nav a:hover { background: var(--green-light); }
+
+/* ---------- Page wrapper ---------- */
+.page {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 32px 24px 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+section[id] { scroll-margin-top: 16px; }
+
+h2 {
+  font-size: 22px;
+  font-weight: 800;
+  margin-bottom: 16px;
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 32px;
+  padding: 32px 24px;
+  background: linear-gradient(180deg, #d9f3b4 0%, #a6c293 55%, #7b946b 100%);
+}
+
+.photo {
+  width: 180px;
+  height: 180px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  overflow: hidden;
+  background: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* shown if the picture file is missing */
+.photo.no-image::after {
+  content: 'PHOTO';
+  font-weight: 700;
+  color: #555;
+}
+
+.hero-text { flex: 1; min-width: 260px; }
+
+.hero-text h1 {
+  font-size: clamp(28px, 5vw, 36px);
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.subtitle {
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin-top: 32px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0 28px;
+  border: 1px solid #222;
+  border-radius: 12px;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.15s ease, filter 0.15s ease;
+}
+
+.btn:hover { transform: translateY(-2px); filter: brightness(1.05); }
+
+.btn-dark { background: #78916a; }
+.btn-light { background: #d6f7b0; }
+
+/* ---------- About ---------- */
+.about {
+  padding: 28px 26px 36px;
+  background: linear-gradient(135deg, #c5ecaa 0%, #a7c590 45%, #7f927a 100%);
+}
+
+.about-box {
+  background: var(--white);
+  border: 1px solid #444;
+  padding: 32px 36px;
+  text-align: center;
+  font-family: 'Ubuntu', Arial, sans-serif;
+  font-size: 17px;
+}
+
+/* ---------- Education + Skills ---------- */
+.two-col {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.card {
+  background: var(--green-light);
+  padding: 24px;
+}
+
+.school { font-size: 14px; margin-bottom: 4px; }
+
+.card ul {
+  margin: 0 0 24px 22px;
+  font-size: 14px;
+}
+
+.fact-box {
+  background: var(--white);
+  border: 1px solid #444;
+  padding: 8px 10px 12px;
+  font-size: 13px;
+}
+
+.fact-text { padding: 4px 8px 0; }
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px 24px;
+}
+
+.skill-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.skill-label { font-size: 13px; }
+
+.pill {
+  display: block;
+  background: var(--white);
+  border: 1px solid #333;
+  border-radius: 14px;
+  padding: 8px 12px;
+  text-align: center;
+  font-size: 13px;
+}
+
+/* ---------- Contact ---------- */
+.contact {
+  padding: 28px 26px 36px;
+  background: linear-gradient(180deg, #d4efb0 0%, #a8c593 55%, #7a936a 100%);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 20px;
+  font-size: 13px;
+}
+
+.field input,
+.field textarea {
+  width: 100%;
+  background: #fafafa;
+  border: 1px solid #333;
+  padding: 10px;
+  font-family: inherit;
+  font-size: 13px;
+}
+
+.field textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+
+.field input.invalid,
+.field textarea.invalid {
+  border: 2px solid #a11;
+}
+
+.btn-send {
+  background: linear-gradient(90deg, #4f6b3f, #a4c28e);
+  padding: 0 28px;
+  font-size: 13px;
+}
+
+.form-status {
+  margin-top: 14px;
+  font-size: 14px;
+  font-weight: 600;
+  min-height: 1.5em;
+}
+
+/* ---------- Phones ---------- */
+@media (max-width: 600px) {
+  .site-header { padding: 16px; }
+  .nav { gap: 10px; }
+  .nav a { padding: 8px 14px; }
+  .hero { justify-content: center; text-align: center; }
+  .buttons { justify-content: center; }
+  .about-box { padding: 24px 18px; }
+  .skills-grid { grid-template-columns: 1fr; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .btn { transition: none; }
+}
